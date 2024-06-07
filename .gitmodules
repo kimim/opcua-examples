@@ -4,3 +4,6 @@
 [submodule "common/cpp/open62541pp"]
 	path = common/cpp/open62541pp
 	url = git@github.com:open62541pp/open62541pp.git
+[submodule "common/rust/opcua"]
+	path = common/rust/opcua
+	url = git@github.com:locka99/opcua.git
