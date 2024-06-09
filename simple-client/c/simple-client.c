@@ -27,8 +27,8 @@ int main(void) {
         UA_DateTime raw_date = *(UA_DateTime *) value.data;
         UA_DateTimeStruct dts = UA_DateTime_toStruct(raw_date);
         UA_LOG_INFO(UA_Log_Stdout, UA_LOGCATEGORY_USERLAND,
-                    "date is: %u-%u-%u %u:%u:%u.%03u",
-                    dts.day, dts.month, dts.year, dts.hour,
+                    "date is: %u-%u-%u %02u:%02u:%u.%03u",
+                    dts.year, dts.month, dts.day, dts.hour,
                     dts.min, dts.sec, dts.milliSec);
     } else {
         UA_LOG_INFO(UA_Log_Stdout, UA_LOGCATEGORY_USERLAND,

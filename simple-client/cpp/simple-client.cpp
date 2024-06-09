@@ -1,6 +1,5 @@
-#include <iostream>
-
 #include "open62541pp/open62541pp.h"
+#include "open62541pp/Logger.h"
 
 int main() {
     opcua::Client client;
@@ -9,5 +8,6 @@ int main() {
     opcua::Node node = client.getNode(opcua::VariableId::Server_ServerStatus_CurrentTime);
     const auto dt = node.readValueScalar<opcua::DateTime>();
 
-    std::cout << "Server data (UTC): " << dt.format("%Y-%m-%d %H:%M:%S") << std::endl;
+    opcua::log(client, opcua::LogLevel::Info, opcua::LogCategory::Client,
+               dt.format("server date is: %Y-%m-%d %H:%M:%S"));
 }
