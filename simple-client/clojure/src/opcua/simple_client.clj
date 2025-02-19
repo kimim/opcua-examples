@@ -1,5 +1,6 @@
 (ns opcua.simple-client
   (:gen-class)
+  (:require [clojure.tools.logging :refer (info)])
   (:import org.eclipse.milo.opcua.sdk.client.OpcUaClient
            org.eclipse.milo.opcua.stack.core.Identifiers))
 
@@ -14,7 +15,7 @@
         (.getVariableNode
          (.getAddressSpace client) Identifiers/Server_ServerStatus_StartTime)
         value (.readValue node)]
-    (println (str (.getJavaDate (.getValue (.getValue value)))))))
+    (info (str (.getJavaDate (.getValue (.getValue value)))))))
 
 (defn -main
   [& args]
