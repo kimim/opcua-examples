@@ -4,16 +4,15 @@
   (:import org.eclipse.milo.opcua.sdk.client.OpcUaClient
            org.eclipse.milo.opcua.stack.core.Identifiers))
 
-(def client (OpcUaClient/create
+(def connection (OpcUaClient/create
              "opc.tcp://localhost:4840"))
 
 (defn read-time
   "Read server status date time"
   []
-  (let [_ (.get (.connect client))
-        node
-        (.getVariableNode
-         (.getAddressSpace client) Identifiers/Server_ServerStatus_StartTime)
+  (let [_ (.get (.connect connection))
+        address-space (.getAddressSpace connection)
+        node (.getVariableNode address-space Identifiers/Server_ServerStatus_StartTime)
         value (.readValue node)]
     (info (str (.getJavaDate (.getValue (.getValue value)))))))
 
