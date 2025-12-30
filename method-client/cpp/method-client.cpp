@@ -2,7 +2,7 @@
 
 int main() {
     opcua::Client client;
-    client.connect("opc.tcp://localhost:4840");
+    client.connect("opc.tcp://172.26.218.163:4840");
 
     // Browse method node
     auto objNode = client.getObjectsNode();

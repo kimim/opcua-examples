@@ -85,6 +85,7 @@ addDataSetField(UA_Server *server) {
     dataSetFieldConfig.dataSetFieldType = UA_PUBSUB_DATASETFIELD_VARIABLE;
     dataSetFieldConfig.field.variable.fieldNameAlias = UA_STRING("Server localtime");
     dataSetFieldConfig.field.variable.promotedField = false;
+    // UA_NS0ID_SERVER_SERVERSTATUS_CURRENTTIME
     dataSetFieldConfig.field.variable.publishParameters.publishedVariable =
         UA_NS0ID(SERVER_SERVERSTATUS_CURRENTTIME);
     dataSetFieldConfig.field.variable.publishParameters.attributeId = UA_ATTRIBUTEID_VALUE;
@@ -104,6 +105,7 @@ addWriterGroup(UA_Server *server) {
     UA_WriterGroupConfig writerGroupConfig;
     memset(&writerGroupConfig, 0, sizeof(UA_WriterGroupConfig));
     writerGroupConfig.name = UA_STRING("Demo WriterGroup");
+    /* Publishing interval of 100ms */
     writerGroupConfig.publishingInterval = 100;
     writerGroupConfig.writerGroupId = 100;
     writerGroupConfig.encodingMimeType = UA_PUBSUB_ENCODING_UADP;

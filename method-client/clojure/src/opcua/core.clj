@@ -1,4 +1,4 @@
-(ns opcua.simple-client
+(ns opcua.core
   (:gen-class)
   (:require [clojure.tools.logging :refer (info)])
   (:import org.eclipse.milo.opcua.sdk.client.OpcUaClient
@@ -18,5 +18,4 @@
 
 (defn -main
   [& args]
-  (read-time)
-  (.disconnect connection))
+  (read-time))
