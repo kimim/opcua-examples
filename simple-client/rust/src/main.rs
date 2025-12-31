@@ -6,9 +6,9 @@ use opcua::{
 #[tokio::main]
 async fn main() {
     let mut client = ClientBuilder::new()
-        .application_name("My First Client")
-        .application_uri("urn:MyFirstClient")
-        .create_sample_keypair(true)
+        .application_name("Simple Client")
+        .application_uri("urn:SimpleClient")
+        .create_sample_keypair(false)
         .trust_server_certs(true)
         .session_retry_limit(3)
         .client().unwrap();
