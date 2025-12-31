@@ -1,11 +1,11 @@
 cmake_minimum_required(VERSION 3.12)
 
-set(MYEXE simple-server)
+set(MYEXE variable-server)
 
 project(
   ${MYEXE}
   VERSION 0.13.0
-  DESCRIPTION "simple server based on open62541pp"
+  DESCRIPTION "variable server based on open62541pp"
   HOMEPAGE_URL "https://github.com/kimim/opcua-examples"
   LANGUAGES CXX
 )
