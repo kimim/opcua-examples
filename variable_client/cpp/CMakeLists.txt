@@ -1,16 +1,15 @@
 cmake_minimum_required(VERSION 3.12)
 
-set(MYEXE simple-client)
+set(MYEXE variable-client)
 
 project(
   ${MYEXE}
   VERSION 0.13.0
-  DESCRIPTION "simple server based on open62541pp"
+  DESCRIPTION "variable client based on open62541pp"
   HOMEPAGE_URL "https://github.com/kimim/opcua-examples"
   LANGUAGES CXX
 )
 
-# set c++ standard explicitly, compile feature "cxx_std_17" does not set -std=c++17 compile flag
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_EXTENSIONS OFF)
