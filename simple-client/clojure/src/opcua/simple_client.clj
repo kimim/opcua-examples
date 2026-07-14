@@ -10,7 +10,7 @@
 (defn read-time
   "Read server status date time"
   []
-  (let [_ (.get (.connect connection))
+  (let [_ (.connect connection)
         address-space (.getAddressSpace connection)
         node (.getVariableNode address-space Identifiers/Server_ServerStatus_StartTime)
         value (.readValue node)]
